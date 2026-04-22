@@ -1,0 +1,275 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --bg: #f7f5f0;
+  --surface: #ffffff;
+  --text: #1a1a1a;
+  --muted: #5a5a5a;
+  --border: #e4e1db;
+  --accent: #c95e3b;
+  --accent-soft: #f3dcd3;
+  --error-bg: #fde8e4;
+  --error-fg: #8a2a16;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family:
+    system-ui,
+    -apple-system,
+    "Hiragino Sans",
+    "Yu Gothic",
+    sans-serif;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--accent);
+}
+
+.page {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 2.5rem 1.25rem 4rem;
+}
+
+.hero {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.hero h1 {
+  font-family: Georgia, "Playfair Display", serif;
+  font-size: clamp(1.9rem, 4vw, 2.6rem);
+  margin: 0 0 0.75rem;
+  letter-spacing: 0.02em;
+}
+
+.hero-sub {
+  color: var(--muted);
+  margin: 0;
+  font-size: 1rem;
+}
+
+.hero-sub strong {
+  color: var(--accent);
+}
+
+.explain-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.form-label {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.form-input {
+  width: 100%;
+  font: inherit;
+  padding: 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: #fafaf7;
+  resize: vertical;
+  min-height: 7rem;
+}
+
+.form-input:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
+
+.form-submit {
+  align-self: flex-end;
+  padding: 0.7rem 1.4rem;
+  font: inherit;
+  font-weight: 600;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: opacity 0.15s;
+}
+
+.form-submit:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.error-box {
+  background: var(--error-bg);
+  color: var(--error-fg);
+  padding: 0.9rem 1rem;
+  border-radius: 8px;
+  margin-bottom: 1.25rem;
+}
+
+.loading-box {
+  background: var(--accent-soft);
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+  color: var(--muted);
+  margin-bottom: 1.25rem;
+}
+
+.result {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.75rem 1.5rem;
+  margin-top: 1rem;
+}
+
+.result-header h2 {
+  font-family: Georgia, serif;
+  font-size: 1.6rem;
+  margin: 0 0 0.5rem;
+}
+
+.result-source {
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin: 0 0 1.25rem;
+}
+
+.result-section {
+  margin-top: 2rem;
+}
+
+.result-section h3 {
+  font-size: 1.05rem;
+  margin: 0 0 0.75rem;
+  padding-bottom: 0.35rem;
+  border-bottom: 2px solid var(--accent-soft);
+  display: inline-block;
+}
+
+.result-summary {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.mermaid-container {
+  width: 100%;
+  overflow-x: auto;
+  padding: 0.5rem;
+  background: #fafaf7;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+}
+
+.mermaid-container svg {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.mermaid-fallback {
+  background: var(--error-bg);
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.mermaid-error {
+  margin: 0 0 0.5rem;
+  color: var(--error-fg);
+  font-weight: 600;
+}
+
+.mermaid-fallback pre {
+  background: #fff;
+  padding: 0.75rem;
+  border-radius: 6px;
+  overflow-x: auto;
+  font-size: 0.85rem;
+  margin: 0;
+}
+
+.result-terms {
+  display: grid;
+  gap: 0.75rem;
+  margin: 0;
+}
+
+.result-term {
+  background: #fafaf7;
+  border-left: 3px solid var(--accent);
+  padding: 0.6rem 0.9rem;
+  border-radius: 4px;
+}
+
+.result-term dt {
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.result-term dd {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.result-people {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.result-people li {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 0.75rem;
+  padding: 0.5rem 0.75rem;
+  background: #fafaf7;
+  border-radius: 6px;
+}
+
+.result-people strong {
+  min-width: 8rem;
+}
+
+.result-people span {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.footer {
+  margin-top: 3rem;
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+@media (max-width: 520px) {
+  .page {
+    padding: 1.5rem 1rem 3rem;
+  }
+  .result {
+    padding: 1.25rem 1rem;
+  }
+  .form-submit {
+    align-self: stretch;
+  }
+}
